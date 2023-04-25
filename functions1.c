@@ -147,7 +147,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		num /= 16;
 	}
 
-	if (flags & F_HASH && init_num != 0)
+	if (flags & F_hash && init_num != 0)
 	{
 		buffer[i--] = flag_ch;
 		buffer[i--] = '0';

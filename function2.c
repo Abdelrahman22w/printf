@@ -38,18 +38,18 @@ int print_pointer(va_list types, char buffer[],
 		length++;
 	}
 
-	if ((flags & F_ZERO) && !(flags & F_MINUS))
+	if ((flags & F_zero) && !(flags & F_minus))
 		sp = '0';
-	if (flags & F_PLUS)
+	if (flags & F_plus)
 		extra_ch = '+', length++;
-	else if (flags & F_SPACE)
+	else if (flags & F_space)
 		extra_ch = ' ', length++;
 
 	ind++;
 
 	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
 	return (write_pointer(buffer, ind, length,
-		width, flags, sp, extra_c, sp_start));
+		width, flags, sp, extra_ch, sp_start));
 }
 
 /** print non printable **/
