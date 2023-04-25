@@ -22,7 +22,7 @@ int get_flags(const char *format, int *i)
 				break;
 			}
 
-		if (F_character[j] == 0)
+		if (F_characters[j] == 0)
 			break;
 	}
 

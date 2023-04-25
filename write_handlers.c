@@ -75,7 +75,7 @@ int write_number(int is_negative, int ind, char buffer[],
 		extra_char = ' ';
 
 	return (write_num(ind, buffer, flags, width, precision,
-		length, tab, extra_ch));
+		length, tab, extra_char));
 }
 
 /**
@@ -95,7 +95,7 @@ int write_num(int ind, char buffer[],
 	int flags, int width, int prec,
 	int length, char padd, char extra_c)
 {
-	int i, padd_intial = 1;
+	int i, padd_initial = 1;
 
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
 		return (0);
@@ -163,10 +163,10 @@ int write_unsgnd(int is_negative, int ind,
 	if (precision == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
 		return (0); /* printf(".0d", 0)  no char is printed */
 
-	if (precision > 0 && precision < length)
+	if (precision > 0 && precision < len)
 		tab = ' ';
 
-	while (precision > length)
+	while (precision > len)
 	{
 		buffer[--ind] = '0';
 		len++;

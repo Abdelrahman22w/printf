@@ -24,7 +24,7 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 	};
 	for (pos = 0; fmt_type[pos].fmt != '\0'; pos++)
 		if (fmt[*ind] == fmt_type[pos].fmt)
-			return (fmt_type[i].fn(list, buffer, flags, width, precision, size));
+			return (fmt_type[pos].fn(list, buffer, flags, width, precision, size));
 
 	if (fmt_type[pos].fmt == '\0')
 	{
